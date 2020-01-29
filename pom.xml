@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <testSuite>all_tests_suite.xml</testSuite>
+        <testSuite>allTestsSuite.xml</testSuite>
     </properties>
 
     <dependencies>
