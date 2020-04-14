@@ -1,5 +1,6 @@
 import assertions.MyProfileAssertions;
 import general.TestBase;
+import io.qameta.allure.Description;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import scenarios.LoginScenario;
@@ -12,6 +13,7 @@ public class UpdateZipCodeTest extends TestBase {
     private static final String RANDOM_ZIP_CODE = random(5, false, true);
 
     @Test
+    @Description("The goal of this test is to check if user is able to update zip code")
     public void verifyIfUserCanUpdateZipCode() {
         new HomePage(driver)
                 .openHomePage()

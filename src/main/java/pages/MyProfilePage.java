@@ -1,6 +1,7 @@
 package pages;
 
 import general.BasePage;
+import io.qameta.allure.Step;
 import lombok.Getter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -19,12 +20,14 @@ public class MyProfilePage extends BasePage {
         super(driver);
     }
 
+    @Step("Input zip code: {zipCode}")
     public MyProfilePage inputZipCode(String zipCode) {
         zipCodeInput.clear();
         zipCodeInput.sendKeys(zipCode);
         return this;
     }
 
+    @Step("Click on Submit button")
     public AccountPage clickSubmitButton() {
         submitButton.click();
         return new AccountPage(driver);

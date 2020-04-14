@@ -1,6 +1,7 @@
 import assertions.AccountAssertions;
 import assertions.LoginAssertions;
 import general.TestBase;
+import io.qameta.allure.Description;
 import org.testng.annotations.Test;
 import pages.HomePage;
 
@@ -11,6 +12,7 @@ public class LoginTest extends TestBase {
     private static final String USER_NAME = "Demo User";
 
     @Test
+    @Description("The goal of this test is to log in to the site with valid username and password")
     public void verifyIfUserCanLogin() {
         new HomePage(driver)
                 .openHomePage()

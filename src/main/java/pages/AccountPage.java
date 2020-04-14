@@ -1,6 +1,7 @@
 package pages;
 
 import general.BasePage;
+import io.qameta.allure.Step;
 import lombok.Getter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -26,6 +27,7 @@ public class AccountPage extends BasePage {
         wait.until(visibilityOf(headerLogo));
     }
 
+    @Step("Click on My Profile tab")
     public MyProfilePage clickMyProfileTab() {
         Actions builder = new Actions(driver);
         builder.moveToElement(myProfileLink).perform();
