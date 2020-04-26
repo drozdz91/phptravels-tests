@@ -3,6 +3,7 @@
 <suite name="All Tests">
 
     <listeners>
+        <listener class-name="general.listeners.TestListener"/>
         <listener class-name="general.listeners.RetryListener"/>
     </listeners>
 

@@ -1,12 +1,9 @@
 package general;
 
-import io.qameta.allure.Attachment;
 import io.qameta.allure.Step;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
+import lombok.Getter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -15,6 +12,7 @@ import static java.util.concurrent.TimeUnit.SECONDS;
 
 public class TestBase {
 
+    @Getter
     protected WebDriver driver;
 
     @Step("Loading configuration and setting up browser")
@@ -28,16 +26,8 @@ public class TestBase {
 
     @Step("Disposing browser")
     @AfterMethod
-    public void closeBrowser(ITestResult result) {
-        if (result.getStatus() == ITestResult.FAILURE || result.getStatus() == ITestResult.SUCCESS_PERCENTAGE_FAILURE)
-            makeScreenShot(result);
+    public void closeBrowser() {
         driver.close();
         driver.quit();
-    }
-
-    @Attachment(value = "Page screenshot test failure", type = "image/png")
-    public byte[] makeScreenShot(ITestResult result) {
-        byte[] screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-        return screenshotFile;
     }
 }
