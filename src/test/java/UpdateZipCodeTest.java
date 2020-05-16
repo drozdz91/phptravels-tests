@@ -1,6 +1,8 @@
 import assertions.MyProfileAssertions;
 import general.TestBase;
+import general.listeners.TestListener;
 import io.qameta.allure.Description;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import scenarios.LoginScenario;
@@ -8,6 +10,7 @@ import scenarios.LoginScenario;
 import static general.PropertyManager.getInstance;
 import static org.apache.commons.lang3.RandomStringUtils.random;
 
+@Listeners(TestListener.class)
 public class UpdateZipCodeTest extends TestBase {
 
     private static final String RANDOM_ZIP_CODE = random(5, false, true);

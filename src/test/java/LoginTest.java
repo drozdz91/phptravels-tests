@@ -1,12 +1,15 @@
 import assertions.AccountAssertions;
 import assertions.LoginAssertions;
 import general.TestBase;
+import general.listeners.TestListener;
 import io.qameta.allure.Description;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.HomePage;
 
 import static general.PropertyManager.getInstance;
 
+@Listeners(TestListener.class)
 public class LoginTest extends TestBase {
 
     private static final String USER_NAME = "Demo User";
