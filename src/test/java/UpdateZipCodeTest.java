@@ -15,7 +15,7 @@ public class UpdateZipCodeTest extends TestBase {
 
     private static final String RANDOM_ZIP_CODE = random(5, false, true);
 
-    @Test
+    @Test(groups = {"regression"})
     @Description("The goal of this test is to check if user is able to update zip code")
     public void verifyIfUserCanUpdateZipCode() {
         new HomePage(driver)

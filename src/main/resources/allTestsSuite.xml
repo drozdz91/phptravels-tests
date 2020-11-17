@@ -6,14 +6,14 @@
         <listener class-name="general.listeners.RetryListener"/>
     </listeners>
 
-    <test name="Login Tests">
+    <test name="test">
+        <groups>
+            <run>
+                <include name="regression"/>
+            </run>
+        </groups>
         <classes>
             <class name="LoginTest"/>
-        </classes>
-    </test>
-
-    <test name="User Data Update Tests">
-        <classes>
             <class name="UpdateZipCodeTest"/>
         </classes>
     </test>

@@ -17,7 +17,7 @@ public class TestBase {
     protected WebDriver driver;
 
     @Step("Loading configuration and setting up browser")
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void launchBrowser() {
         getInstance();
         driver = new ChromeDriver();
@@ -26,7 +26,7 @@ public class TestBase {
     }
 
     @Step("Disposing browser")
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void closeBrowser(ITestResult result) {
         driver.close();
         driver.quit();

@@ -14,7 +14,7 @@ public class LoginTest extends TestBase {
 
     private static final String USER_NAME = "Demo User";
 
-    @Test
+    @Test(groups = {"smoke", "regression"})
     @Description("The goal of this test is to log in to the site with valid username and password")
     public void verifyIfUserCanLogin() {
         new HomePage(driver)
